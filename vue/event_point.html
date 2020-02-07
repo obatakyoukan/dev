@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title> Vue_off line .js </title>
+</head>
+
+<body>
+<!--本文-->
+<div id="app">
+    <div id="main" v-on:mousemove="onmousemove">
+	screen: {{ screenX }}/{{ screenY }} <br />
+	page:   {{ pageX }}/{{ pageY }} <br />
+	client: {{ clientX }}/{{clientY }} <br />
+	offset: {{ offsetX }}/{{ offsetY }} <br />
+    </div>
+</div>
+
+<script src="lib/vue.min.js"></script>
+<script src="js/event_point.js"></script>
+</body>
+
+</html>
