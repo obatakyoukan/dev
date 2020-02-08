@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title> Vue_off line .js </title>
+</head>
+
+<body>
+<!--本文-->
+<div id="app">
+    <form>
+	<div> Whtat OS do you use ?</div>
+	<label for="windows"> Windows </label>
+	<input type="checkbox" id="windows" value="Windows" v-model="os" />
+	<label for="linux"> Linux </label>
+	<input type="checkbox" id="linux" value="Linux" v-model="os" />
+	<label for="mac"> macOS </label>
+	<input type="checkbox" id="mac" value="MacOS" v-model="os" />
+	
+    </form>
+    <p> 回答: {{ os }} </p>
+</div>
+
+<script src="lib/vue.min.js"></script>
+<script src="js/model_check_multi.js"></script>
+</body>
+
+</html>
