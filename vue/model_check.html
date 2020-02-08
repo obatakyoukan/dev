@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title> Vue_off line .js </title>
+</head>
+
+<body>
+<!--本文-->
+<div id="app">
+    <form>
+	<label for="agree"> agree: </label>
+	<input type="checkbox" id="agree" v-model="agree" />
+    </form>
+    <div> 回答:{{ agree }} </div>
+</div>
+
+<script src="lib/vue.min.js"></script>
+<script src="js/model_check.js"></script>
+</body>
+
+</html>
