@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title> Vue_off line .js </title>
+</head>
+
+<body>
+<!--本文-->
+<div id="app">
+    <form>
+	<label for="name">Name:</label>
+	<input type="text" id="name" v-model="myName" />
+    </form>
+    <div> Hello! {{ myName }}! </div>
+</div>
+<script src="lib/vue.min.js"></script>
+<script src="js/form.js"></script>
+</body>
+
+</html>
