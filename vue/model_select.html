@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title> Vue_off line .js </title>
+</head>
+
+<body>
+<!--本文-->
+<div id="app" >
+    <label for="os"> What OS do you use? </label> <br />
+    <select id="os" v-model="os">
+	<option value=""> Select </option>
+	<option>Windows</option>
+	<option>Linux</option>
+	<option>macOS</option>
+    </select>
+    <p> Answer: {{ os }} </p>
+</div>
+
+<script src="lib/vue.min.js"></script>
+<script src="js/model_select.js"></script>
+</body>
+
+</html>
