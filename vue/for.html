@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title> Vue_off line .js </title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/4.3.1/css/bootstrap.min.css" />
+</head>
+
+<body>
+<!--本文-->
+<div id="app">
+    <table class="table">
+	<th>ISBN</th> <th> Booktitle </th> <th> Price </th>
+	<tr v-for="b in books">
+	    <td> {{ b.isbn }} </td>
+	    <td> {{ b.title}} </td>
+	    <td> {{ b.price}} </td>
+	</tr>
+    </table>
+</div>
+
+<script src="lib/vue.min.js"></script>
+<script src="js/for.js"></script>
+</body>
+
+</html>
