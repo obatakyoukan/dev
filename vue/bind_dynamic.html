@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title> Vue_off line .js </title>
+</head>
+
+<body>
+<!--本文-->
+<div id="app">
+    <select v-model="attr">
+	<option value="height"> Height </option>
+	<option value="width"> Width </option>
+    </select>:
+    <input type="text" size="5" v-model="size" /> <br />
+    <img src="https://wings.msn.to/image/wings.jpg" v-bind:[attr]="size" />
+</div>
+
+<script src="lib/vue.min.js"></script>
+<script src="js/bind_dynamic.js"></script>
+</body>
+
+</html>
