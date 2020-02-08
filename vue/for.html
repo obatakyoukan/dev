@@ -10,8 +10,9 @@
 <!--本文-->
 <div id="app">
     <table class="table">
-	<th>ISBN</th> <th> Booktitle </th> <th> Price </th>
-	<tr v-for="b in books">
+	<th> No. </th> <th>ISBN</th> <th> Booktitle </th> <th> Price </th>
+	<tr v-for="(b,i) in books">
+	    <td> {{ i+1 }} </td>
 	    <td> {{ b.isbn }} </td>
 	    <td> {{ b.title}} </td>
 	    <td> {{ b.price}} </td>
