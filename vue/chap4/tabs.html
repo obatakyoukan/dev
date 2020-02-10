@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title> Vue_off line .js </title>
+<link rel="stylesheet" href="css/tab.css" />
+</head>
+
+<body>
+<!--本文-->
+<div id="app">
+    <div id="container">
+	<ul>
+	    <li v-for="tab in tabNames">
+		<a href="#" v-on:click.prepend="onclick(tab)"> {{ tabs[tab] }} </a>
+	    </li>
+	</ul>
+	<keep-alive>
+	    <component v-bind:is="currentTab"></component>
+	</keep-alive>
+    </div>
+</div>
+<script src="lib/vue.min.js"></script>
+<script src="js/tabs.js"></script>
+</body>
+
+</html>
