@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title> Vue_off line .js </title>
+</head>
+
+<body>
+<!--本文-->
+<div id="app">
+    <my-slot>
+	<template v-slot:header>
+	    <h3> Welcome Vue.js </h3>
+	</template>
+	
+	<p> Let's study with us. </p>
+	
+	<template v-slot:footer>
+	    <span> Written by WINGS PROJECT </span>
+	</template>
+
+	<p> Question </p>
+    </my-slot>
+</div>
+
+<script src="lib/vue.min.js"></script>
+<script src="js/slot_multi.js"></script>
+</body>
+
+</html>
