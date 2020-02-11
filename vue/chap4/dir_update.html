@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title> Vue_off line .js </title>
+</head>
+
+<body>
+<!--本文-->
+<div id="app">
+    <select v-model="color">
+	<option value="yellow">yellow</option>
+	<option value="red">red</option>
+	<option value="blue">blue</option>
+    </select>
+    <p> WINGS PROJECT? <span v-highlight="color"> Request member! </span>
+    Let's particiate
+    </p>
+</div>
+
+<script src="lib/vue.min.js"></script>
+<script src="js/dir_update.js"></script>
+</body>
+
+</html>
