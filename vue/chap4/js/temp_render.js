@@ -3,7 +3,7 @@ Vue.component('my-loading', {
     render: function(h){
 	switch( this.type ){
 	    case 'text':
-		return h('p', '...Now Loading...');
+		return h('p', ['...Now Loading...', h('p', 'this is text mode.' ) ]);
 	    case 'image':
 		return h('img',{
 		    attrs:{
