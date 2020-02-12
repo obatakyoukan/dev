@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title> Vue_off line .js </title>
+</head>
+
+<body>
+<!--本文-->
+<div id="app">
+    <select v-model="color">
+	<option value="yellow"> Yellow </option>
+	<option value="red"> Red </option>
+	<option value="blue"> Blue </option>
+    </select>
+    <p> WINGS PROJECT <span v-highlight.border="color"> REQUEST MEMBER</span>
+    Let's participate!</p>
+</div>
+<script src="lib/vue.min.js"></script>
+<script src="js/dir_mod.js"></script>
+</body>
+
+</html>
