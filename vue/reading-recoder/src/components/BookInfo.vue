@@ -9,6 +9,7 @@
    <li> Writer:    {{book.author}}</li>
    <li> Publisher: {{book.publisher}} </li>
    <li> Published: {{book.published}} </li>
+   <li> <a :href="book.url">Google Books Link</a>  </li>
   </ul>
  </div>
 </div>

@@ -24,7 +24,7 @@
   },
   data() {
    return {
-    keyword: 'vuejs',
+    keyword: '',
     books: []
    }
   },
@@ -49,6 +49,7 @@
 	publisher: b.volumeInfo.publisher,
 	published: b.volumeInfo.publishedDate,
 	image: img ? img.smallThumbnail : '',
+	url: b.volumeInfo.infoLink
        })
        }
       })
