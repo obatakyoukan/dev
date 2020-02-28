@@ -3,7 +3,7 @@
   <BookInfo :book="book"></BookInfo>
   <hr />
   <el-form ref="form" :model="form" :rules="rules" label-width="120px" >
-   <el-form-item label="読了日">
+   <el-form-item label="開始日">
     <el-date-picker type="date" v-model="form.read"></el-date-picker>
    </el-form-item>
    <el-form-item label="感想" prop="memo">
@@ -11,6 +11,7 @@
    </el-form-item>
    <el-form-item>
     <el-button type="primary" @click="onsubmit">Register</el-button>
+    <el-button type="primary" @click="ondelete">Delete</el-button>
    </el-form-item>
   </el-form>
  </div>
@@ -19,7 +20,7 @@
 <script>
 import {mapGetters, mapActions } from 'vuex'
 import BookInfo from '@/components/BookInfo.vue'
-import { UPDATE_CURRENT, UPDATE_BOOK } from '@/store/mutation-types'
+import { UPDATE_CURRENT, UPDATE_BOOK, DELETE_BOOK } from '@/store/mutation-types'
 
 export default {
  name: 'book-form',
@@ -35,7 +36,7 @@ export default {
    },
    rules: {
     memo: [
-     { required: true, message: 'Input memo.', trigger: 'blur' }
+     //{ required: true, message: 'Input memo.', trigger: 'blur' }
     ]
    }
   }
@@ -55,10 +56,10 @@ export default {
   }
  },
  methods: {
-  ...mapActions([UPDATE_BOOK, UPDATE_CURRENT]),
+  ...mapActions([UPDATE_BOOK, UPDATE_CURRENT, DELETE_BOOK]),
   onsubmit() {
-   this.$refs['form'].validate((valid) => {
-    if (valid) {
+   //this.$refs['form'].validate((valid) => {
+   // if (valid) {
      this[UPDATE_BOOK](
       Object.assign({}, this.book, this.form)
      )
@@ -72,8 +73,27 @@ export default {
      this.form.read = new Date()
      this.form.memo = ''
      this.$router.push('/')
-    }
-   })
+    //}
+   //})
+  },
+  ondelete() {
+   //this.$refs['form'].validate((valid) => {
+   // if (valid) {
+     this[DELETE_BOOK](
+      Object.assign({}, this.book, this.form)
+     )
+     this[UPDATE_CURRENT](null)
+     this.$notify({
+      title: 'Delete Data',
+      message: this.$createElement('p', {style: 'color: #009'},
+       'Success!'),
+       duration: 2000
+     })
+     this.form.read = new Date()
+     this.form.memo = ''
+     this.$router.push('/')
+    //}
+   //})
   }
  }
 

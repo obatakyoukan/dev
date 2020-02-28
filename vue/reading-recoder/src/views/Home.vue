@@ -2,11 +2,12 @@
   <div class="list">
    <p> There are {{ bookCount }} books.</p>
    <BookInfo v-for="(b, i) of books"
-    :linkable="true" :book="b" :index="i+1" :key="b.isbn"></BookInfo>
+    :linkable="true" :book="b" :index="i+1" :key="b.isbn">  </BookInfo>
     <div>
      <el-pagination background layout="prev, pager, next"
       :total="bookCount" :page-size="3" @current-change="onchange"></el-pagination>
     </div>
+
   </div>
 </template>
 

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import createPersistedState from 'vuex-persistedstate'
-import { UPDATE_CURRENT, UPDATE_BOOK } from './mutation-types'
+import { UPDATE_CURRENT, UPDATE_BOOK, DELETE_BOOK } from './mutation-types'
 
 Vue.use(Vuex)
 
@@ -44,6 +44,12 @@ export default new Vuex.Store({
     } else {
      state.books.push(payload)
     }
+   },
+   [ DELETE_BOOK ]( state , payload ){
+    let b = this.getters.getBookById( payload.id )
+    if (b) {
+     state.books = state.books.filter( book => book.id !== b.id )
+    }
    }
   },
   actions: {
@@ -52,6 +58,9 @@ export default new Vuex.Store({
    },
    [UPDATE_BOOK]( {commit} , payload){
     commit( UPDATE_BOOK , payload )
+   },
+   [DELETE_BOOK]( {commit} , payload){
+    commit( DELETE_BOOK , payload )
    }
   },
   plugins: [createPersistedState({
