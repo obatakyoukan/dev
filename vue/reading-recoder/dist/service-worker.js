@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.b39ec3ef2163c3cf0e941e738afa105d.js"
+  "/precache-manifest.c580549d80bb05836eb169f656a932f8.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "reading-recoder"});

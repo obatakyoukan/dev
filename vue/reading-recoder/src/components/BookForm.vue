@@ -6,7 +6,10 @@
    <el-form-item label="開始日">
     <el-date-picker type="date" v-model="form.read"></el-date-picker>
    </el-form-item>
-   <el-form-item label="感想" prop="memo">
+   <div>
+    <div v-html="memomark" />
+   </div>
+   <el-form-item label="メモ" prop="memo">
     <el-input type="textarea" size="large" v-model="form.memo"></el-input>
    </el-form-item>
    <el-form-item>
@@ -21,6 +24,8 @@
 import {mapGetters, mapActions } from 'vuex'
 import BookInfo from '@/components/BookInfo.vue'
 import { UPDATE_CURRENT, UPDATE_BOOK, DELETE_BOOK } from '@/store/mutation-types'
+
+import marked from 'marked'
 
 export default {
  name: 'book-form',
@@ -41,7 +46,12 @@ export default {
    }
   }
  },
- computed: mapGetters( [ 'current', 'getBookById' ]),
+ computed: {
+  ...mapGetters( [ 'current', 'getBookById' ]),
+  memomark: function(){
+   return marked(this.form.memo)
+  }
+ },
  created() {
   if (!this.current) {
    this.$router.push('/')
