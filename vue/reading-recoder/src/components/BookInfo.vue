@@ -1,6 +1,7 @@
 <template>
 <div class="clearfix" :class="{ linkable }" @click="onclick">
- <div class="image"><img :src="book.image" /> </div>
+ <div v-if="book.imagetype==='pdf'"> <div class="image"><iframe :src="book.image" width="200" height="200" /> </div> </div>
+ <div v-else><div class="image"><img :src="book.image" /> </div> </div>
  <div class="details">
   <ul>
    <li v-if="index">{{ index }}. </li>
@@ -9,8 +10,9 @@
    <li> Writer:    {{book.author}}</li>
    <li> Publisher: {{book.publisher}} </li>
    <li> Published: {{book.published}} </li>
-   <li> <a :href="book.url">Google Books Link</a>  </li>
-  </ul>
+   <li> imagetype: {{book.imagetype}} </li>
+   <li> <a :href="book.url">Link</a>  </li>
+ </ul>
  </div>
 </div>
 </template>

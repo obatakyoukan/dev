@@ -66,6 +66,7 @@
 	publisher: b.volumeInfo.publisher,
 	published: b.volumeInfo.publishedDate,
 	image: img ? img.smallThumbnail : '',
+	imagetype: 'png',
 	url: b.volumeInfo.infoLink
        })
        }

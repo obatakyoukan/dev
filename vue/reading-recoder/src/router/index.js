@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import BookSearch from '../components/BookSearch.vue'
 import BookForm from '../components/BookForm.vue'
+import BookMake from '../components/BookMake.vue'
 
 Vue.use(VueRouter)
 
@@ -29,6 +30,11 @@ const routes = [
    path: '/form',
    name: 'form',
    component: BookForm
+  },
+  {
+   path: '/make',
+   name: 'make',
+   component: BookMake
   },
   {
    path: '*',
